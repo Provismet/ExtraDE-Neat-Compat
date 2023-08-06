@@ -1,41 +1,42 @@
 {
 	"schemaVersion": 1,
-	"id": "modid",
+	"id": "extrade-neat",
 	"version": "${version}",
-	"name": "Example mod",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"name": "ExtraDE Neat Compatibility",
+	"description": "Adds Neat healthbar icons for ExtraDE entity groups.",
 	"authors": [
-		"Me!"
+		"Provismet"
 	],
+
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://github.com/Provismet/ExtraDE-Neat-Compat",
+		"sources": "https://github.com/Provismet/ExtraDE-Neat-Compat"
 	},
-	"license": "CC0-1.0",
+
+	"license": "MIT",
 	"icon": "assets/modid/icon.png",
-	"environment": "*",
+	"environment": "client",
+
 	"entrypoints": {
-		"main": [
-			"com.example.ExampleMod"
-		],
-		"client": [
-			"com.example.ExampleModClient"
-		]
+		"main": []
 	},
+
 	"mixins": [
-		"modid.mixins.json",
-		{
-			"config": "modid.client.mixins.json",
-			"environment": "client"
-		}
+		"extrade-neat.mixins.json"
 	],
+
 	"depends": {
 		"fabricloader": ">=0.14.21",
-		"minecraft": "~1.20.1",
+		"minecraft": "~1.20",
 		"java": ">=17",
-		"fabric-api": "*"
+		"fabric-api": "*",
+		"neat": "*",
+		"extra-damage-enchantments": "*"
 	},
-	"suggests": {
-		"another-mod": "*"
-	}
+
+	"custom": {
+		"modmenu": {
+		  "parent": "extra-damage-enchantments"
+		}
+	  }
 }
